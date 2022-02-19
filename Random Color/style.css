@@ -1,0 +1,28 @@
+@font-face {
+	font-family: Lemon Milk Medium;
+	src: url("./assest/LemonMilkMedium-mLZYV.otf");
+}
+@font-face {
+	font-family: Lemon Milk Regular;
+	src: url("./assest/LemonMilkRegular-X3XE2.otf");
+}
+h1, h4{
+	
+	text-align: center;
+	user-select: none;
+}
+h1{
+	font-family: Lemon Milk Medium;
+	margin-top: 45vh;
+	font-size: 2.5vw;
+	letter-spacing: 1px;
+}
+h4{
+	font-family: Lemon Milk Regular;
+	margin-top: -2vh;
+	font-size: 1vw;
+	letter-spacing: 3px;
+}
+.black{
+	color: black;
+}
