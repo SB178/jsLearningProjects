@@ -1,5 +1,5 @@
 const body = document.querySelector('#body');
-let randColor = () => { 
+const randColor = () => { 
 	let r = Math.random()*255;
 	let g = Math.random()*255;
 	let b = Math.random()*255;
