@@ -16,4 +16,4 @@ let randColor = () => {
 	return `rgb(${r},${g},${b})`;
 }
 
-body.addEventListener('click',()=>(body.style.backgroundColor = randColor()));
+window.addEventListener('click',()=>(body.style.backgroundColor = randColor()));
