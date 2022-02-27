@@ -1,5 +1,10 @@
 const close = document.querySelector('#close');
 const navbar = document.querySelector('.navBarShown');
+const allMaterialIcons = document.querySelectorAll('.material-icons');
+for(let materialicons of allMaterialIcons)
+{
+	materialicons.style.fontSize=('1.5vw');
+}
 let counter = 0;
 //meet link de @subhro https://meet.google.com/emk-mdyb-yvy
 // console.log(close);

@@ -25,6 +25,7 @@
 	width: 18vw;
 	padding-top: 1vw;
 	overflow-x:hidden;
+	border: 1px solid black;
 	transition: ease-in-out, 0.4s;
 }
 
@@ -38,6 +39,7 @@
 	width: 3.2vw;
 	padding-top: 1vw;
 	overflow-x:hidden;
+	border: 1px solid black;
 	transition: ease-in-out, 0.4s;
 }
 
@@ -49,7 +51,7 @@
 .material-icons{
 	position: relative;
 	font-size: 30px;
-	padding-top: 0.1vw;
+	/* padding-top: 0.1vw; */
 	padding-left: 1.2vw;
 	padding-right: 1.2vw;
 }
