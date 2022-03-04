@@ -12,7 +12,7 @@ let navBarCounter = 0;
 let navBardeg=0;
 document.querySelector("#nonNavBarSortDropper").style.fontSize="1.2vw";
 let closeNav = function(close) {
-	console.log(close.children[0]);
+
 	navBardeg+=180;
 	close.children[0].style.transition= "all 0.4s ease-in-out ";
     close.children[0].style.transform = `rotate(${navBardeg}deg)`; 
@@ -22,7 +22,6 @@ let closeNav = function(close) {
 	nonNavBar.style.transition= "all 0.4s ease-in-out ";
 }
 let openNav = function(close) {
-	console.log(close.children[0]);
 	navBardeg-=180;
 	close.children[0].style.transition= "all 0.4s ease-in-out ";
 	close.children[0].style.transform = `rotate(${navBardeg}deg)`; 
@@ -49,9 +48,21 @@ close.addEventListener("click",function(){
 let generateReportCounter = 0;
 let generateReportDeg=0;
 let allOption=document.querySelectorAll(".nonNavBarContentSmallDataTypeOption");
-const openGenerateReport = function(e)
+
+let generateReportOptionCounter = -1;
+
+const generateReportControl = (e) => 
+{	generateReportOptionCounter=e;
+	if(parseInt(generateReportOptionCounter) != -1)
+	{
+		document.querySelector("#generateReportLabel").innerText = document.querySelectorAll(".nonNavBarContentSmallDataTypeOption")[generateReportOptionCounter].innerText;
+		closeGenerateReport();
+	}
+}
+
+const openGenerateReport = function()
 {
-	e.stopPropagation();
+
 	document.querySelectorAll('.nonNavBarContentSmallBackground')[2].style.height = "10vw";
 	
 	generateReportDeg+=180;
@@ -69,38 +80,37 @@ const openGenerateReport = function(e)
 		option.style.pointerEvents = "auto";
 	}
 
-	document.querySelector("#lastMonth").addEventListener("click", function(e){
-		// generateReportCounter++;
-		e.stopPropagation();
-		document.querySelector("#generateReportLabel").innerText = this.textContent;
-		closeGenerateReport(e);
-		
-		console.log(generateReportCounter);
-	})
+	document.querySelector("#lastMonth").addEventListener("click", function(){
 
-	document.querySelector("#lastYear").addEventListener("click", function(e){
-		
-		// generateReportCounter++;
-		e.stopPropagation();
-		console.log(generateReportCounter);
-		document.querySelector("#generateReportLabel").innerText = this.textContent;
-		closeGenerateReport(e);
+		if(generateReportOptionCounter != 0)
+		{
+			generateReportOptionCounter = 0;
+			generateReportControl(0);
+		}
 	})
+	
+	
+	document.querySelector("#lastYear").addEventListener("click", function(){
+		if(generateReportOptionCounter != 1)
+		{
+			generateReportControl(1);
+		}
+		
+	})
+	
 
-	document.querySelector("#Custom").addEventListener("click", function(e){
-		// generateReportCounter++;
-		e.stopPropagation();
-		console.log(generateReportCounter);
-		document.querySelector("#generateReportLabel").innerText = this.textContent;
-		closeGenerateReport(e);
+	document.querySelector("#Custom").addEventListener("click", function(){
+		if(generateReportOptionCounter != 2)
+		{
+			generateReportControl(2);
+		}
+		
 	})
 	generateReportCounter++;
-	console.log(generateReportCounter);
 }
 
-const closeGenerateReport = function(e)
+ const closeGenerateReport = function()																	//closeGenerateReport
 {
-	e.stopPropagation();
 	document.querySelectorAll('.nonNavBarContentSmallBackground')[2].style.height = "5.5vw";
 	generateReportDeg-=180;
 	document.querySelector('#generateReport').style.transform = `rotate(${generateReportDeg}deg)`;
@@ -115,19 +125,18 @@ const closeGenerateReport = function(e)
 		option.style.pointerEvents = "none";
 	}
 	generateReportCounter++;
+	// console.log(generateReportCounter);
 }
+
 let generateReport = document.querySelector("#generateReport");
 
-generateReport.addEventListener('click',function(e){
-	e.stopPropagation();
+generateReport.addEventListener('click',function(){
 	if(generateReportCounter & 1){
-			console.log(generateReportCounter);
-			closeGenerateReport(e);
+			closeGenerateReport();
 		}
 
 	else{
-			console.log(generateReportCounter);
-			openGenerateReport(e);
+			openGenerateReport();
 	}
 })
 
