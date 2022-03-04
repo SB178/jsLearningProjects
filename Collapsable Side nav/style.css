@@ -2,9 +2,21 @@
 	font-family: Montserrat Medium;
 	src: url('./assests/Montserrat-Medium.ttf');
 }
+@font-face {
+	font-family: Montserrat Bold;
+	src: url('./assests/Montserrat-Bold.ttf');
+}
+@font-face {
+	font-family: Montserrat Light;
+	src: url('./assests/Montserrat-Light.ttf');
+}
 :root{
 	--selection-color: #0C4DB5;
 	--non-selection-color: #979292;
+	--background-color: #EEEEEE;
+	--secondary-color: #3E82EE;
+	--primary-color: #FFFFFF;
+	--dark-grey: #333333;
 }
 
 *{
@@ -14,18 +26,22 @@
 	user-select: none;
 	color: var( --non-selection-color);
 }
+body{
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
 
 .navBarShown{
   	position: sticky;
 	top:0;
 	left: 0;
 	display:flex;
+	background-color: var(--primary-color);
 	flex-direction: column;
-	height: 100vh;
-	width: 18vw;
+	width: 16vw;
 	padding-top: 1vw;
 	overflow-x:hidden;
-	border: 1px solid black;
 	transition: ease-in-out, 0.4s;
 }
 
@@ -34,23 +50,22 @@
 	top:0;
 	left: 0;
 	display:flex;
+	background-color: var(--primary-color);
 	flex-direction: column;
-	height: 100vh;
-	width: 3.2vw;
+	width:3.9vw;
 	padding-top: 1vw;
 	overflow-x:hidden;
-	border: 1px solid black;
-	transition: ease-in-out, 0.4s;
+	transition: all 0.4s ease-in-out;
 }
 
 .navBarContent{
 	display: flex;
 	flex-direction: row;
-	margin: 10 10 1vw 0 ;
+	padding: 0.5vw 0 0.5vw 0 ;
+	margin: 10 0 1vw 0 ;
 }
 .material-icons{
 	position: relative;
-	font-size: 30px;
 	/* padding-top: 0.1vw; */
 	padding-left: 1.2vw;
 	padding-right: 1.2vw;
@@ -61,3 +76,159 @@
 	font-size: 1.2vw;
 }
 
+.navBarActive{
+	color: var(--selection-color);
+}
+.navBarActiveWrapper{
+	border-left: 0.4vw solid var(--selection-color);
+	box-shadow: 11px 11px 16px #00000026;
+}
+.nonNavBar{
+	position:absolute;
+	right: 0%;
+	top: 0%;
+	background-color: var(--background-color);
+	width:84vw;
+	height: 100%;
+	transition: all 0.4s ease-in-out;
+	display: flex;
+	flex-direction: column;
+}
+.nonNavBarWrapper{
+	display: flex;
+	flex-direction: row;
+	padding: 2vw 4vw 2vw 4vw;	
+}
+h2{
+	flex:87%;
+	color: var(--selection-color);
+	font-family: Montserrat Bold;
+	font-size: 3vw;
+	margin-left: 4vw;
+}
+.nonNavBarContentSmallBackground{
+	flex:40%;
+	width:23vw;
+	height:5.5vw;
+	margin: 0 4vw 2vw 4vw;
+	background-color: var(--secondary-color);
+	border-radius: 1.5vw;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 11px 11px 16px #00000026;
+}
+.nonNavBarContentSmallBackground:hover{
+	width:23vw;
+	height:5.5vw;
+	margin: 0 4vw 2vw 4vw;
+	background-color: var(--secondary-color);
+	border-radius: 1.5vw;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 11px 11px 16px #00000026;
+	border: 0.1vw var(--primary-color) solid;
+	box-sizing: border-box;
+}
+.nonNavBarContentSmallDataType{
+	font-size:1.5vw;
+	font-family: Montserrat Medium;
+	margin-left: 1vw;
+	margin-top: 1.8vw;
+	color: var(--primary-color);
+}
+.nonNavBarContentLargeBackground{
+	flex:60%;
+	width:43vw;
+	height:13vw;
+	margin: 0 4vw 0 4vw;
+	/* padding-left: 2.5vw; */
+	background-color: var(--primary-color);
+	border-radius: 2.2vw;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 11px 11px 16px #00000026;
+}
+.nonNavBarContentLargeBackground:hover{
+	width:43vw;
+	height:13vw;
+	margin: 0 4vw 0 4vw;
+	/* padding-left: 2.5vw; */
+	background-color: var(--primary-color);
+	border-radius: 2.2vw;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 11px 11px 16px #00000026;
+	border: 0.1vw var(--selection-color) solid;
+	box-sizing: border-box;
+}
+.nonNavBarContentLargeDataType{
+	flex:33%;
+	font-size:1.5vw;
+	text-align: center;
+	font-family: Montserrat Light;
+	margin: 1.8vw 2.7vw 0 2.7vw;
+	color: var(--dark-grey);
+}
+#generateReport{
+	position: relative;
+	margin-top: 2vw;
+	margin-left: 1vw;
+	height: 1.5vw;
+	padding: 0;
+	color: var(--primary-color);
+}
+#generateReportLabel{
+	width:13vw;
+}
+#export{
+	font-size: 1vw;
+	height: 1.2vw;
+	padding: 0.1vw;
+	margin-top: 1.8vw;
+	border: 0.15vw var(--primary-color) solid;
+	border-radius: 0.5vw;
+}
+.nonNavBarContentSmallDataTypeOptionWrapper{
+	position:absolute;
+	left: 9.5vw;
+	top: 32.5vw;
+	color: var(--primary-color);
+	display: flex;
+	font-size: 1.1vw;
+	flex-direction: column;
+	width:10vw;
+	opacity: 0;
+}
+.nonNavBarContentSmallDataTypeOption{
+	color: var(--primary-color);
+	margin-top: 0.3vw;
+	pointer-events: none;
+}
+.nonNavBarSortWrapper{
+	/* flex: 13%; */
+	position: relative;
+	/* left: 38.5%; */
+	margin-top:0.5vw;
+	margin-right: 4vw;
+	/* margin-left: 41.5vw; */
+	background-color: var(--primary-color);
+	border-radius: 0.7vw;
+	padding: 0.7vw;
+	height: 1.2vw;
+	width: 9vw;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 11px 11px 16px #00000026;
+}
+
+#nonNavBarSortLabel{
+	margin-left: 0.5vw;
+	color: var(--dark-grey);
+	font-size: 0.9vw;
+}
+#nonNavBarSortDropper{
+	color: var(--dark-grey);
+	margin-top: -0.05vw;
+	padding-right: 0.2vw;
+	padding-left: 0.5vw;
+}

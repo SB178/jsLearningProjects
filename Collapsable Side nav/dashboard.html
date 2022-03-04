@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<div class ="navBarShown">
+	<div class = "navBarShown">
 		<div class = "navBarContent" id = "close"><span class="material-icons">close</span> 			<span class = "navBarContentText">Close</span></div>
 		<div class = "navBarContent"><span class="material-icons">account_circle</span>					<span class = "navBarContentText" id="accountName">Account_Name</span></div>
 		<div class = "navBarContent"><span class="material-icons">dashboard</span> 						<span class = "navBarContentText">Dashboard</span></div>
@@ -20,10 +20,51 @@
 		<div class = "navBarContent"><span class="material-icons">inventory_2</span> 					<span class = "navBarContentText">Channels</span></div>
 		<div class = "navBarContent"><span class="material-icons">logout</span> 						<span class = "navBarContentText">Logout</span></div>
 	</div>
-	<div id = "nonNavBar"></div>
+	<div class = "nonNavBar">
+		<div class="nonNavBarWrapper">
+			<h2>Dashboard</h2>
+			<div class ="nonNavBarSortWrapper"><div class = "nonNavBarSort" id="nonNavBarSortLabel">Last 28 days</div> <span class="material-icons" id= "nonNavBarSortDropper">keyboard_arrow_down</span></div>
+		</div>
+		<div class="nonNavBarWrapper">
+			<div class = "nonNavBarContentLargeBackground">   
+				<div class = "nonNavBarContentLargeDataType">Customer</div>
+				<div class = "nonNavBarContentLargeDataType">Paid</div>
+				<div class = "nonNavBarContentLargeDataType">Unpaid</div>
+			</div>
+			<div>
+				<div class = "nonNavBarContentSmallBackground">
+					<div class = "nonNavBarContentSmallDataType" id= "totalPackage">Total Package:</div> <div> 0</div>
+				</div>
+					
+				<div class = "nonNavBarContentSmallBackground" id= "totalChannel">
+					<div class = "nonNavBarContentSmallDataType" id= "totalPackage">Total Channel:</div> <div> 0</div>
+				</div>
+			</div>
+		</div>
+		<div class="nonNavBarWrapper">
+			<div>
+				<div class = "nonNavBarContentSmallBackground">
+					<div class = "nonNavBarContentSmallDataType" id="generateReportLabel">Generate Report</div> <span class="material-icons" id= "generateReport">keyboard_arrow_down</span> <div class = "nonNavBarContentSmallDataType" id="Export">Export</div>
+					<div class = "nonNavBarContentSmallDataTypeOptionWrapper">
+					<div class = "nonNavBarContentSmallDataTypeOption" id="lastMonth">Last Month</div>
+					<div class = "nonNavBarContentSmallDataTypeOption" id="lastYear">Last Year</div>
+					<div class = "nonNavBarContentSmallDataTypeOption" id="Custom">Custom</div>
+					</div>
+					</div>
+					
+				<div class = "nonNavBarContentSmallBackground">
+					<div class = "nonNavBarContentSmallDataType" id= "totalCash">Total Cash:</div><div> 0</div></div>
+			</div>
+			<div class = "nonNavBarContentLargeBackground">
+				<div class = "nonNavBarContentLargeDataType">Admins</div>
+				<div class = "nonNavBarContentLargeDataType">Online</div>
+				<div class = "nonNavBarContentLargeDataType">Offline</div>
+			</div>
+		</div>
+	</div>
 	
 	
-
+	<!-- <script src="./obfuscated.js"></script> -->
 	<script src="./script.js"></script>
 </body>
 </html>
